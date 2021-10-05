@@ -8,22 +8,38 @@
         private $comments;
         private $foto;
 
-	function getName(){
+	function get_name(){
         return $this->name;
     }
-    function getSurname(){
+    function get_surname(){
         return $this->surname;
     }
-    function getAdress(){
+    function get_adress(){
         return $this->adress;
     }
-    function getComments(){
+    function get_comments(){
         return $this->comments;
     }
-    function getFoto(){
+    function get_foto(){
         return $this->foto;
     }
-    
+
+    // Methods
+  function set_name($name) {
+    $this->name = $name;
+  }
+  function set_surname($surname){
+    return $this->surname= $surname;
+}
+function set_adress($adress){
+    return $this->adress=$adress;
+}
+function set_comments($comments){
+    return $this->comments;
+}
+function set_foto($foto){
+    return $this->foto=$foto;
+}
     
     
     
