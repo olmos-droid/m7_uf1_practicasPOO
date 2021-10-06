@@ -161,3 +161,13 @@
 2021/10/05 14:59:01 [notice] 1#1: start worker process 35
 2021/10/05 14:59:38 [error] 32#32: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost:1080"
 2021/10/05 14:59:39 [error] 32#32: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost:1080", referrer: "http://localhost:1080/"
+2021/10/06 15:59:16 [notice] 1#1: using the "epoll" event method
+2021/10/06 15:59:16 [notice] 1#1: nginx/1.21.3
+2021/10/06 15:59:16 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+2021/10/06 15:59:16 [notice] 1#1: OS: Linux 5.10.0-8-amd64
+2021/10/06 15:59:16 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/10/06 15:59:16 [notice] 1#1: start worker processes
+2021/10/06 15:59:16 [notice] 1#1: start worker process 32
+2021/10/06 15:59:16 [notice] 1#1: start worker process 33
+2021/10/06 15:59:16 [notice] 1#1: start worker process 34
+2021/10/06 15:59:16 [notice] 1#1: start worker process 35
