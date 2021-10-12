@@ -27,7 +27,7 @@
                             <label class="form-control" for="name">Name</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="name" id="name">
+                            <input class="form-control" type="text" name="name">
 
                         </td>
                     </tr>
@@ -38,7 +38,7 @@
                             <label class="form-control" for="surname">Surname</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="surname" id="surname">
+                            <input class="form-control" type="text" name="surname">
                         </td>
                     </tr>
                 </div>
@@ -48,7 +48,7 @@
                             <label class="form-control" for="address">Address</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="address" id="address">
+                            <input class="form-control" type="text" name="address">
                         </td>
                     </tr>
                 </div>
@@ -58,24 +58,24 @@
                             <label class="form-control" for="comment">Comment</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="comment" id="comment">
+                            <input class="form-control" type="text" name="comment">
                         </td>
                     </tr>
                 </div>
                 <tr>
                     <div class="input-group mb-3">
-                       <td colspan="2">
+                        <td colspan="2">
                             <input type="file" name="photo" class="form-control" id="inputGroupFile01">
                         </td>
                     </div>
                 </tr>
-                <tr>
-                    <td colspan="2">
-                        <input class="btn btn-outline-light" type="submit" name="submit" value="Upload" >
-                    </td>
-                </tr>
 
             </tbody>
+            <tr>
+                <td colspan="2">
+                    <input class="btn btn-outline-light" type="submit" name="submit" value="Upload">
+                </td>
+            </tr>
         </table>
 
     </form>

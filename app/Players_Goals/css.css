@@ -1,0 +1,12 @@
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table {
+  margin: 20px  /* or margin: 0 auto 0 auto */
+}

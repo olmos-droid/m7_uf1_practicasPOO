@@ -1,0 +1,12 @@
+body {
+    text-align:center;
+    background-color: rgb(199, 199, 199);
+    padding: 2%;
+}
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+td{
+    box-align:center
+}

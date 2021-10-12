@@ -1,12 +1,16 @@
 <?php
 include('Class/Upload.php');
 include('Class/Persona.php');
-
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+echo ('formulario recivido');
 $name ->$_POST["name"];
-echo $name;
+echo "name:".$name;
 $surbane ->$_POST["surname"];
 $address ->$_POST["address"];
 $comment ->$_POST["comment"];
+}
+
+
 
 $filename ->$_FILES["photo"]["name"];
 
