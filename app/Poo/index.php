@@ -27,7 +27,7 @@
                             <label class="form-control" for="name">Name</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="name">
+                            <input class="form-control" type="text" name="name" value="Pepe">
 
                         </td>
                     </tr>
@@ -38,7 +38,7 @@
                             <label class="form-control" for="surname">Surname</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="surname">
+                            <input class="form-control" type="text" name="surname" value="Silvio">
                         </td>
                     </tr>
                 </div>
@@ -48,7 +48,7 @@
                             <label class="form-control" for="address">Address</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="address">
+                            <input class="form-control" type="text" name="address" value="c/razz 44">
                         </td>
                     </tr>
                 </div>
@@ -58,7 +58,7 @@
                             <label class="form-control" for="comment">Comment</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="comment">
+                            <input class="form-control" type="text" name="comment" value="vaya tela">
                         </td>
                     </tr>
                 </div>
