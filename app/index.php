@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="Ficha_Alumno_view.php" method="post">
+    <form action="Ficha_Alumno_view.php" method="post" enctype="multipart/form-data">
         <table class="table  w-50 table-striped table-dark center">
             <thead>
                 <tr>
@@ -27,7 +27,7 @@
                             <label class="form-control" for="name">Name</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="persona[]" id="name">
+                            <input class="form-control" type="text" name="name" id="name">
 
                         </td>
                     </tr>
@@ -38,7 +38,7 @@
                             <label class="form-control" for="surname">Surname</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="persona[]" id="surname">
+                            <input class="form-control" type="text" name="surname" id="surname">
                         </td>
                     </tr>
                 </div>
@@ -48,7 +48,7 @@
                             <label class="form-control" for="address">Address</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="persona[]" id="address">
+                            <input class="form-control" type="text" name="address" id="address">
                         </td>
                     </tr>
                 </div>
@@ -58,18 +58,21 @@
                             <label class="form-control" for="comment">Comment</label>
                         </td>
                         <td>
-                            <input class="form-control" type="text" name="persona[]" id="comment">
+                            <input class="form-control" type="text" name="comment" id="comment">
                         </td>
                     </tr>
                 </div>
                 <tr>
                     <div class="input-group mb-3">
-                        <td></td>
-
-                        <td>
-                            <input type="file" name="persona[]" class="form-control" id="inputGroupFile01">
+                       <td colspan="2">
+                            <input type="file" name="photo" class="form-control" id="inputGroupFile01">
                         </td>
                     </div>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input class="btn btn-outline-light" type="submit" name="submit" value="Upload" >
+                    </td>
                 </tr>
 
             </tbody>
