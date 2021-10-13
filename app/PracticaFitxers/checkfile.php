@@ -2,11 +2,11 @@
 // Check if the form was submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check if file was uploaded without errors
-    if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0){
+    if(isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0){
         $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
-        $filename = $_FILES["photo"]["name"];
-        $filetype = $_FILES["photo"]["type"];
-        $filesize = $_FILES["photo"]["size"];
+        $filename = $_FILES["foto"]["name"];
+        $filetype = $_FILES["foto"]["type"];
+        $filesize = $_FILES["foto"]["size"];
     
         // Verify file extension
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
@@ -22,13 +22,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(file_exists("upload/" . $filename)){
                 echo $filename . " is already exists.";
             } else{
-                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $filename);
+                move_uploaded_file($_FILES["foto"]["tmp_name"], "upload/" . $filename);
                 echo "Your file was uploaded successfully.";
             } 
         } else{
             echo "Error: There was a problem uploading your file. Please try again."; 
         }
     } else{
-        echo "Error: " . $_FILES["photo"]["error"];
+        echo "Error: " . $_FILES["foto"]["error"];
     }
 }
