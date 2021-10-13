@@ -12,7 +12,7 @@ $path = "./upload/" . $_FILES["photo"]["name"];
 $upload = new Upload($path);
 
 //sube elarchivos
-$upload->uploadFile();
+$upload->upload();
 
 
 //Creamos un objeto persona

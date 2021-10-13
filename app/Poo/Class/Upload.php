@@ -15,7 +15,7 @@ class Upload
 * upload: Función que hace las operaciones necesarias para subir el archivo
 * al servidor
 */
-    public function uploadFile()
+    public function upload()
     {
         //directorio donde subir las cosas
         $dir_upload = "./upload/";
