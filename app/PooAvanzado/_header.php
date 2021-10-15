@@ -9,5 +9,6 @@
 </head>
 <body>
     <h1>Image gallery</h1>
+    <h2>this is header</h2>
 </body>
 </html>
