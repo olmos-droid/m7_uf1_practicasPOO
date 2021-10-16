@@ -28,7 +28,6 @@
                         </td>
                         <td>
                             <input class="form-control" type="text" name="name" value="Pepe">
-
                         </td>
                     </tr>
                 </div>
@@ -69,7 +68,6 @@
                         </td>
                     </div>
                 </tr>
-
             </tbody>
             <tr>
                 <td colspan="2">
@@ -77,10 +75,7 @@
                 </td>
             </tr>
         </table>
-
     </form>
-
-
 </body>
 
 </html>

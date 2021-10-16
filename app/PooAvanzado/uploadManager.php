@@ -79,7 +79,7 @@ function uploadPicture()
 function addPictureToFile($file_uploaded, $title_uploaded)
 {
     $file = fopen("fotos.txt", "a");
-    $line =$title_uploaded . "###" . $file_uploaded .PHP_EOL;
+    $line =$title_uploaded."###".$file_uploaded.PHP_EOL;
     fwrite($file,$line );
     fclose($file);
     
