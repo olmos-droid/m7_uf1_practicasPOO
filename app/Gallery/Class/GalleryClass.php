@@ -17,7 +17,7 @@ class Gallery
   */
     function loadGallery(){
       $file = fopen($this->_filename,"r");
-      echo 'console.log('.__FUNCTION__.':'.$this->_filename.')';
+      echo __FUNCTION__.':'.$this->_filename;
       while(!feof($file)){
         $line= explode("###",fgets($file));
         $titulo = $line[0];
