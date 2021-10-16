@@ -1,25 +1,26 @@
 <?php
 
-class Menu{
-    private $links=array();
+class Menu
+{
+    private $enlaces = array();
+    private $titulos = array();
 
-
-    function cargarOpcion($link){
-        array_push($links,$link);
+    public function cargarOpcion($en, $tit)
+    {
+        $this->enlaces[] = $en;
+        $this->titulos[] = $tit;
     }
-    function mostrar(){
-        foreach ($this->links as $key => $value) {
-            echo '<a>'.$key . $value.'</a>';
-        }
+    function mostrar()
+    {
+  for ($i=0; $i < count($this->enlaces); $i++) { 
+      echo '<a href="'.$this->enlaces[$i].'"> '. $this->titulos[$i] .' </a>';
+  }
     }
-
-
 }
 
 $menu = new Menu();
-$menu->cargarOpcion("www.google.com");
-$menu->cargarOpcion("www.facebook.com");
-$menu->cargarOpcion("www.firefox.com");
-$menu->cargarOpcion("www.instagram.com");
+$menu->cargarOpcion("www.google.com", "google");
+$menu->cargarOpcion("www.facebook.com", "facebook");
+$menu->cargarOpcion("www.firefox.com", "firefox");
+$menu->cargarOpcion("www.instagram.com", "instagram");
 $menu->mostrar();
-?>
