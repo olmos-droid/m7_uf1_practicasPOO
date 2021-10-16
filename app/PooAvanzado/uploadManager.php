@@ -4,13 +4,14 @@
 * que almacena todas las fotos.
 * Return: Devuelve la ruta final del archivo.
 */
-uploadPicture();
 
+
+uploadPicture();
 
 function uploadPicture()
 {
-    //directorio donde subir las cosas sino existe lo crea y le da permisos
-    $dir_upload = "./upload/";
+    
+    $dir_upload = "./pictures/"; //directorio donde subir las cosas sino existe lo crea y le da permisos
     if (!file_exists($dir_upload)) {
         mkdir($dir_upload, 0777, true);
     }
@@ -27,7 +28,7 @@ function uploadPicture()
                 // Verify file extension
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if (!array_key_exists($ext, $allowed)) {
-                    throw new UploadError("Error: " . $_FILES["foto"]["error"]);
+                    throw new UploadError("Error: Please select a valid file format.");
                 }
 
                 // Verify file size - 5MB maximum
@@ -39,11 +40,16 @@ function uploadPicture()
                 // Verify MYME type of the file
                 if (in_array($filetype, $allowed)) {
                     // Check whether file exists before uploading it
-                    if (file_exists("upload/" . $filename)) {
+                    if (file_exists($dir_upload . $filename)) {
                         throw new UploadError($filename . " is already exists.");
+                        die();
                     } else {
-                        move_uploaded_file($_FILES["foto"]["tmp_name"], "upload/" . $filename);
-                        echo "Your file was uploaded successfully.";
+                        move_uploaded_file($_FILES["foto"]["tmp_name"], $dir_upload . $filename);
+                        $newPath = $dir_upload . $filename;
+                        $titul = $_POST['titul'];
+                        addPictureToFile($newPath, $titul);
+                      
+
                     }
                 } else {
                     throw new UploadError("Error: There was a problem uploading your file. Please try again.");
@@ -53,8 +59,11 @@ function uploadPicture()
             }
         }
     } catch (UploadError $e) {
-        echo "UploadError ".$e->getMessage();
+        header('Location: index.php?upload=error&msg=' . urlencode($e->getMessage()));
+        exit;
     }
+
+    header("Location: index.php?upload=success");
 }
 
 
@@ -69,6 +78,11 @@ function uploadPicture()
 
 function addPictureToFile($file_uploaded, $title_uploaded)
 {
+    $file = fopen("fotos.txt", "a");
+    $line =$title_uploaded . "###" . $file_uploaded .PHP_EOL;
+    fwrite($file,$line );
+    fclose($file);
+    
 }
 
 /*

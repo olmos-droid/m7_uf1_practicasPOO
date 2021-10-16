@@ -6,7 +6,7 @@
             <p href=""><input type="text" name="titul" id="titul"></p>
             <label for="file">Picture:</label>
             <p href=""><input type="file" name="foto" id="foto"></p>
-            <button class="btn btn-primary" href="" type="submit">Upload</button>
+            <button class="btn btn-primary" type="submit">Upload</button>
         </form>
     </div>
 </div>
