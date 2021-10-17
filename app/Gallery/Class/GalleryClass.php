@@ -1,5 +1,5 @@
 <?php
-include ('./PictureClass.php');
+include ('PictureClass.php');
 class Gallery
 {
     private $_gallery = [];
@@ -17,13 +17,16 @@ class Gallery
   */
     function loadGallery(){
       $file = fopen($this->_filename,"r");
-      echo __FUNCTION__.':'.$this->_filename;
       while(!feof($file)){
         $line= explode("###",fgets($file));
         $titulo = $line[0];
+        // echo ' el titulo es : '. $titulo;
         $ubicacion = $line[1];
-        $picture = new Picture($titulo,$ubicacion);
-        echo "console.log(".$picture.")";
+       
+        $picture = new Picture("heyhey","holaquetal");
+        // echo $picture->__get('title');
+        // echo $picture->__get('filename');
+      print_r($picture);
       }
     }
 
@@ -44,6 +47,3 @@ class Gallery
       return null;
   }
 }
-
-$gallery = new Gallery($_GET["ruta"]);
-echo 'console.log('.$_GET["ruta"].')';

@@ -90,11 +90,4 @@ function addPictureToFile($file_uploaded, $title_uploaded)
 * en la subida de archivos. Por ejemplo:
 * throw new UploadError("Error: Please select a valid file format.");
 */
-
-class UploadError extends Exception
-{
-
-
-    // die("Error: Please select a valid file format.");
-    //die("Error: File size is larger than the allowed limit.");
-}
+class UploadError extends Exception{}
