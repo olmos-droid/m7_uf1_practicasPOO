@@ -10,6 +10,7 @@ foreach ($gallery->__get("_gallery") as $pic) {
     echo "</br>";
     echo "</br>";
 }
+echo 'numero de total de fotos : ' . count($gallery->__get("_gallery"));
 ?>
 
         <?php

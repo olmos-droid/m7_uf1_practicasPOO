@@ -1,3 +1,7 @@
-titulo1###./pictures/carnet_estudiante_2021.jpeg
-segundaimagen###./pictures/01.jpg
-imagen3###./pictures/03.jpg
+foto1###./pictures/01.jpg
+foto2###./pictures/03.jpg
+foto3###./pictures/04.png
+foto5###./pictures/05.jpg
+foto5###./pictures/portada claude monet.jpg
+foto7###./pictures/dali_cisnesreflejoelefantes.jpg
+foto8###./pictures/dali_desintegracion_persistencia.jpg

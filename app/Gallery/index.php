@@ -12,7 +12,11 @@ if (isset($_GET['upload'])&& $_GET['upload']=="error") {
     <div class="card-body">
         <div class="bd-example">
             <a type="button" class="btn btn-primary" href="addPicture.php">Add picture</a>
-            <a type="button" class="btn btn-success" href="gallery.php?ruta=./fotos.txt">View Gallery</a>
+            <?php 
+            if(file_exists("./fotos.txt")){
+            echo '<a type="button" class="btn btn-success" href="gallery.php?ruta=./fotos.txt">View Gallery</a>';
+            }
+            ?>
         </div>
     </div>
 </div>
