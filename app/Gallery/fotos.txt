@@ -1,7 +1,13 @@
 foto1###./pictures/01.jpg
-foto2###./pictures/03.jpg
-foto3###./pictures/04.png
+foto2###./pictures/01.jpg
+foto3###./pictures/03.jpg
+foto4###./pictures/04.png
 foto5###./pictures/05.jpg
-foto5###./pictures/portada claude monet.jpg
+foto6###./pictures/portada claude monet.jpg
 foto7###./pictures/dali_cisnesreflejoelefantes.jpg
 foto8###./pictures/dali_desintegracion_persistencia.jpg
+foto9###./pictures/dali_loselefantes.jpg
+foto10###./pictures/dali_profile.jpg
+foto11###./pictures/05.jpg
+foto12###./pictures/portada claude monet.jpg
+foto13###./pictures/dali_cisnesreflejoelefantes.jpg
