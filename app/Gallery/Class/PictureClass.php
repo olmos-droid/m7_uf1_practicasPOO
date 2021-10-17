@@ -2,7 +2,7 @@
 class Picture
 {
     private $title;
-    private $filname;
+    private $filename;
 
     /*Constructor*/
     function __construct($title, $fileName){
