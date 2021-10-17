@@ -2,7 +2,7 @@
 include('PictureClass.php');
 class Gallery
 {
-  private $_gallery = [];
+  private $_gallery = array();
   private $_filename;
 
   /*Constructor: Recibe la ruta del archivo fotos.txt*/
@@ -10,23 +10,20 @@ class Gallery
   {
     $this->_filename = $fileName;
   }
-
-
   /*
   *Recorre el archivo fotos.txt y para cada titulo_ubicacion$titulo_ubicaciona, crea un
   *elemento Picture que lo añade al atributo $_gallery[]
   */
   function loadGallery()
   {
+
     $file = fopen($this->_filename, "r");
     while (!feof($file)) {
       $line = explode("###", fgets($file));
       $picture = new Picture($line[0], $line[1]);
-      $this->_gallery = $picture;
+      array_push($this->_gallery, $picture);
     }
-    var_dump($this->_gallery);
   }
-
   /*
   *Getters.
   */
