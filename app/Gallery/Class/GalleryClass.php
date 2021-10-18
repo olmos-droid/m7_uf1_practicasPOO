@@ -16,6 +16,10 @@ class Gallery
   */
   function loadGallery()
   {
+    if (!file_exists("fotos.txt")){
+      fopen("fotos.txt",0777,true);
+
+    }
 
     $file = fopen($this->_filename, "r");
     while (!feof($file)) {
