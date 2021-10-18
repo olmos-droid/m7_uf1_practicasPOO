@@ -7,6 +7,7 @@ $gallery->loadGallery();
 echo '<div class="container">';
 echo '<div class="card-group">';
 foreach ($gallery->__get("_gallery") as $pic) {
+    
     echo '<div class="col-sm-12 col-md-4">';
     echo '<div class="card-column ">';
     echo '<div class="custom-column-content">';
