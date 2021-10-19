@@ -4,13 +4,9 @@
 * que almacena todas las fotos.
 * Return: Devuelve la ruta final del archivo.
 */
-
-
 uploadPicture();
-
 function uploadPicture()
 {
-
     $dir_upload = "./pictures/"; //directorio donde subir las cosas sino existe lo crea y le da permisos
     if (!file_exists($dir_upload)) {
         mkdir($dir_upload, 0777, true);
@@ -18,25 +14,21 @@ function uploadPicture()
     try {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Check if file was uploaded without errors
-
             if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
                 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
                 $filename = $_FILES["foto"]["name"];
                 $filetype = $_FILES["foto"]["type"];
                 $filesize = $_FILES["foto"]["size"];
-
                 // Verify file extension
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if (!array_key_exists($ext, $allowed)) {
                     throw new UploadError("Error: Please select a valid file format.");
                 }
-
                 // Verify file size - 5MB maximum
                 $maxsize = 5 * 1024 * 1024;
                 if ($filesize > $maxsize) {
                     throw new UploadError("Error: File size is larger than the allowed limit.");
                 }
-
                 // Verify MYME type of the file
                 if (in_array($filetype, $allowed)) {
                     // Check whether file exists before uploading it
@@ -60,12 +52,9 @@ function uploadPicture()
         header('Location: index.php?upload=error&msg=' . urlencode($e->getMessage()));
         exit;
     }
-
     header("Location: index.php?upload=success");
     return $newPath;
 }
-
-
 /*
 * Función que se encarga de añadir al archivo fotos.txt el titulo y la ruta de la
 * fotografía recien subida
@@ -74,23 +63,11 @@ function uploadPicture()
 *       $title_uploaded: El titulo del archivo
 * Return: null
 */
-
 function addPictureToFile($file_uploaded, $title_uploaded)
 {
-    // $file = fopen("fotos.txt", "w")or die("Unable to open file!");;
-
-
-    // $line =$title_uploaded."###".$file_uploaded."\n";
-
-    // fwrite($file,$line );
-    // $line =$title_uploaded."###".$file_uploaded."\n";
-    // fwrite($file,$line );
-    // fclose($file);
     $content = $title_uploaded . "###" . $file_uploaded;
     $filename = $_GET['ruta'];
-    // file_put_contents($file,$content);
-    file_put_contents(trim($filename), trim($content).PHP_EOL, FILE_APPEND | LOCK_EX);
-  
+    file_put_contents(trim($filename), trim($content) . PHP_EOL, FILE_APPEND | LOCK_EX);
     return null;
 }
 

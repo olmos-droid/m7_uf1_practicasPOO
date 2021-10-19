@@ -4,7 +4,6 @@ class Gallery
 {
   private $_gallery = array();
   private $_filename;
-
   /*Constructor: Recibe la ruta del archivo fotos.txt*/
   function __construct($filename)
   {
@@ -21,16 +20,14 @@ class Gallery
     }
     $fileArray = file($this->_filename);
     $file = fopen($this->_filename, "r");
-
     for ($i = 0; $i < count($fileArray); $i++) {
       $line = explode("###", fgets($file));
       $picture = new Picture($line[0], $line[1]);
       array_push($this->_gallery, $picture);
-      
     }
   }
   /*
-  *Getters.
+  *Getters y setters genericos usando la propiedad propertyu_exists para con un get y set poder llamar y setear a todos los atributos por separado
   */
   public function __set($propiedad, $valor)
   {

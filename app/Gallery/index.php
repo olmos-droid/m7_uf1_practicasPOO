@@ -1,5 +1,5 @@
 <?php
-$filename="./fotos.txt";
+$filename = "./fotos.txt";
 include_once('_header.php');
 if (isset($_GET['upload']) && $_GET['upload'] == "success") {
     echo "
@@ -13,7 +13,7 @@ if (isset($_GET['upload']) && $_GET['upload'] == "error") {
     echo "
     <div class='container'>
     <div class='alert alert-danger' role='alert'>
-    <h3>".$_GET['msg']."</h3>
+    <h3>" . $_GET['msg'] . "</h3>
     </div>
     </div>";
 }
@@ -23,12 +23,11 @@ if (isset($_GET['upload']) && $_GET['upload'] == "error") {
         <div class="card-body">
             <div class="bd-example">
                 <?php
-                echo '<a type="button" class="btn btn-primary" href="addPicture.php?ruta='.$filename.'">Add picture</a>';
+                echo '<a type="button" class="btn btn-primary" href="addPicture.php?ruta=' . $filename . '">Add picture</a>';
                 if (file_exists($filename)) {
-                    echo '<a <button type="button" class="btn btn-success" href="gallery.php?ruta='.$filename.'" >View Gallery</button> </a>';
-                }else{
+                    echo '<a <button type="button" class="btn btn-success" href="gallery.php?ruta=' . $filename . '" >View Gallery</button> </a>';
+                } else {
                     echo '<a> <button disabled type="button" class="btn btn-success" href="gallery.php" >View Gallery</button> </a>';
-
                 }
                 ?>
             </div>

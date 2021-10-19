@@ -24,7 +24,6 @@ class Picture
          return $this->$propiedad;
       }
       return null;
-  }
-    
+  }    
 }
 ?>

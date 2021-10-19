@@ -2,14 +2,13 @@
 <?php
 include_once('_header.php');
 include('./Class/GalleryClass.php');
-$filename=$_GET['ruta'];
+$filename = $_GET['ruta'];
 
 $gallery = new Gallery($filename);
-$gallery->loadGallery();    
+$gallery->loadGallery();
 echo '<div class="container">';
 echo '<div class="card-group">';
 foreach ($gallery->__get("_gallery") as $pic) {
-    
     echo '<div class="col-sm-12 col-md-4">';
     echo '<div class="card-column ">';
     echo '<div class="custom-column-content">';
@@ -22,5 +21,4 @@ foreach ($gallery->__get("_gallery") as $pic) {
 echo '</div>';
 echo '</div>';
 ?>
-
 <?php include_once('_footer.php') ?>
