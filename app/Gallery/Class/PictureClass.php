@@ -4,9 +4,9 @@ class Picture
     private $title;
     private $filename;
     /*Constructor*/
-    function __construct($title, $fileName){
+    function __construct($title, $filename){
         $this->title=$title;
-        $this->filename=$fileName;
+        $this->filename=$filename;
     }
     /*
   *Getters. Lo que quiere decir que los atributos de

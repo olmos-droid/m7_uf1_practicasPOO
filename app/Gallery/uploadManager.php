@@ -62,6 +62,7 @@ function uploadPicture()
     }
 
     header("Location: index.php?upload=success");
+    return $newPath;
 }
 
 
@@ -76,13 +77,21 @@ function uploadPicture()
 
 function addPictureToFile($file_uploaded, $title_uploaded)
 {
-    $file = fopen("fotos.txt", "a");
-    $line = $title_uploaded . "###" . $file_uploaded . PHP_EOL;
-    fwrite($file, $line);
-    fclose($file);
-    $lines = file('fotos.txt'); 
-    $last = sizeof($lines) - 1 ; 
-    unset($lines[$last]); 
+    // $file = fopen("fotos.txt", "w")or die("Unable to open file!");;
+
+
+    // $line =$title_uploaded."###".$file_uploaded."\n";
+
+    // fwrite($file,$line );
+    // $line =$title_uploaded."###".$file_uploaded."\n";
+    // fwrite($file,$line );
+    // fclose($file);
+    $content = $title_uploaded . "###" . $file_uploaded;
+    $filename = $_GET['ruta'];
+    // file_put_contents($file,$content);
+    file_put_contents(trim($filename), trim($content).PHP_EOL, FILE_APPEND | LOCK_EX);
+  
+    return null;
 }
 
 /*

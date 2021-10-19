@@ -6,9 +6,9 @@ class Gallery
   private $_filename;
 
   /*Constructor: Recibe la ruta del archivo fotos.txt*/
-  function __construct($fileName)
+  function __construct($filename)
   {
-    $this->_filename = $fileName;
+    $this->_filename = $filename;
   }
   /*
   *Recorre el archivo fotos.txt y para cada titulo_ubicacion$titulo_ubicaciona, crea un
@@ -16,18 +16,17 @@ class Gallery
   */
   function loadGallery()
   {
-    //if (!file_exists("fotos.txt")){
-     // fopen("fotos.txt",0777,true);
+    if (!file_exists($this->_filename)) {
+      fopen($this->_filename, 0777, true);
+    }
+    $fileArray = file($this->_filename);
+    $file = fopen($this->_filename, "r");
 
-    // }
-
-    // $file = fopen($this->_filename, "r");
-    $file = fopen("fotos.txt", "r");
-    while (!feof($file)) {
-      
+    for ($i = 0; $i < count($fileArray); $i++) {
       $line = explode("###", fgets($file));
       $picture = new Picture($line[0], $line[1]);
       array_push($this->_gallery, $picture);
+      
     }
   }
   /*

@@ -2,7 +2,9 @@
 <?php
 include_once('_header.php');
 include('./Class/GalleryClass.php');
-$gallery = new Gallery('./fotos.txt');
+$filename=$_GET['ruta'];
+
+$gallery = new Gallery($filename);
 $gallery->loadGallery();    
 echo '<div class="container">';
 echo '<div class="card-group">';

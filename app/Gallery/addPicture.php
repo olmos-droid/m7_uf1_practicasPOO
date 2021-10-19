@@ -1,8 +1,11 @@
-<?php include_once('_header.php') ?>
+<?php include_once('_header.php');
+$filename = $_GET['ruta']?>
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <form action="uploadManager.php" method="post" enctype="multipart/form-data">
+            <?php
+            echo '<form action="uploadManager.php?ruta='.$filename.'" method="post" enctype="multipart/form-data">'
+            ?>
                 <label for="titul">Title:</label>
                 <p href=""><input type="text" name="titul" id="titul"></p>
                 <label for="file">Picture:</label>
