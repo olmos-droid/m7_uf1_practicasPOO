@@ -10,7 +10,7 @@ uploadPicture();
 
 function uploadPicture()
 {
-    
+
     $dir_upload = "./pictures/"; //directorio donde subir las cosas sino existe lo crea y le da permisos
     if (!file_exists($dir_upload)) {
         mkdir($dir_upload, 0777, true);
@@ -48,8 +48,6 @@ function uploadPicture()
                         $newPath = $dir_upload . $filename;
                         $titul = $_POST['titul'];
                         addPictureToFile($newPath, $titul);
-                      
-
                     }
                 } else {
                     throw new UploadError("Error: There was a problem uploading your file. Please try again.");
@@ -79,10 +77,12 @@ function uploadPicture()
 function addPictureToFile($file_uploaded, $title_uploaded)
 {
     $file = fopen("fotos.txt", "a");
-    $line =$title_uploaded."###".$file_uploaded.PHP_EOL;
-    fwrite($file,$line );
+    $line = $title_uploaded . "###" . $file_uploaded . PHP_EOL;
+    fwrite($file, $line);
     fclose($file);
-    
+    $lines = file('fotos.txt'); 
+    $last = sizeof($lines) - 1 ; 
+    unset($lines[$last]); 
 }
 
 /*
@@ -90,4 +90,6 @@ function addPictureToFile($file_uploaded, $title_uploaded)
 * en la subida de archivos. Por ejemplo:
 * throw new UploadError("Error: Please select a valid file format.");
 */
-class UploadError extends Exception{}
+class UploadError extends Exception
+{
+}
