@@ -16,13 +16,15 @@ class Gallery
   */
   function loadGallery()
   {
-    if (!file_exists("fotos.txt")){
-      fopen("fotos.txt",0777,true);
+    //if (!file_exists("fotos.txt")){
+     // fopen("fotos.txt",0777,true);
 
-    }
+    // }
 
-    $file = fopen($this->_filename, "r");
+    // $file = fopen($this->_filename, "r");
+    $file = fopen("fotos.txt", "r");
     while (!feof($file)) {
+      
       $line = explode("###", fgets($file));
       $picture = new Picture($line[0], $line[1]);
       array_push($this->_gallery, $picture);
