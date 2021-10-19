@@ -4,3 +4,4 @@ ddasdsa###./pictures/descarga.jpeg
 ddd###./pictures/Captura de pantalla 2020-12-01 003417.png
 ###./pictures/Captura de pantalla 2021-01-28 160530.png
 >>>>>>> e4e5822f2a6b30629bc684a33800318a64b5eb13
+###./pictures/frases-mercury_0.jpg
